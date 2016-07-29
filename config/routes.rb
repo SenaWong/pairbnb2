@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
   root 'pages#home'
+
+  get '/about', to: 'pages#about'
+
+  resources :users, only: [:show, :edit, :update, :destroy] do
+    resources :listings
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
