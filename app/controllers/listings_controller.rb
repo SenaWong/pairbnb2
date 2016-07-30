@@ -1,5 +1,9 @@
 class ListingsController < ApplicationController
-	before_filter :get_user
+	before_filter :get_user, :except => [:home]
+
+	def home
+
+	end
 
 	def get_user
 		@user = User.find(params[:user_id])
