@@ -2,6 +2,7 @@ class ListingsController < ApplicationController
 	before_filter :get_user, :except => [:home]
 
 	def home
+		@listing = Listing.all
 
 	end
 
@@ -10,9 +11,7 @@ class ListingsController < ApplicationController
 	end
 
 	def index
-
 		@listing = Listing.all
-
 	end
 
 	def new

@@ -1,0 +1,14 @@
+<h1 align="center">Listings all here!</h1>
+
+<div align="center">
+<% @listing.each do |l| %>
+
+	<%=  l.name %></br>
+	<%=  l.location %></br>
+	<%=  l.no_of_rooms %></br>
+	Created by <%=  l.user.email %></br>
+	<hr>
+
+
+<% end %>
+</div>
