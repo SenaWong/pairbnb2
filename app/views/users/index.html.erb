@@ -1,0 +1,14 @@
+<h1 align="center">All users</h1>
+
+<div align="center">
+<% @users.each do |u| %>
+
+	<%=  u.first_name %></br>
+	<%=  u.email %></br>
+	<%=  u.id    %></br>
+	<%= link_to "View profile!", user_path(u) %>
+	<hr>
+
+
+<% end %>
+</div>
