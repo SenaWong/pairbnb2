@@ -1,3 +1,27 @@
 <h1 align="center">
 	Welcome to <%= @user.email %>'s page!
 </h1>
+
+<h3 align="center">
+	All articles by <%= @user.email %>!
+</h3>
+
+<div align="center">
+<% @listings.each do |l| %>
+
+Listing name:	<%=  l.name %></br>
+Location :	<%=  l.location %></br>
+No of rooms :	<%=  l.no_of_rooms %></br>
+Created by <%=  l.user.email %></br>
+<%= link_to "View listing", user_listing_path(@user, l) %>
+	<hr>
+
+
+<% end %>
+</div>
+
+<div align="center">
+<% if current_user == @user %>
+	<%= link_to "Create a new listing", new_user_listing_path(@user) %>
+<% end %>
+</div>

@@ -1,12 +1,13 @@
 <h1 align="center">Listings all here!</h1>
 
 <div align="center">
-<% @listing.each do |l| %>
+<% @listings.each do |l| %>
 
-	<%=  l.name %></br>
-	<%=  l.location %></br>
-	<%=  l.no_of_rooms %></br>
-	Created by <%=  l.user.email %></br>
+Listing name:	<%=  l.name %></br>
+Location :	<%=  l.location %></br>
+No of rooms :	<%=  l.no_of_rooms %></br>
+Created by <%=  l.user.email %></br>
+<%= link_to "View this listing", user_listing_path(l.user, l) %>
 	<hr>
 
 
