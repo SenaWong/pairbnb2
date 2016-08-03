@@ -47,3 +47,5 @@ group :development do
 end
 
 gem 'clearance'
+
+gem 'will_paginate', '~> 3.1.0'
