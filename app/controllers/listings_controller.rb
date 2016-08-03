@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
 	before_filter :get_user, :except => [:home]
 
 	def home
-		@listings = Listing.all
+		@listings = Listing.paginate(page: params[:page], per_page: 5)
 	end
 
 	def get_user

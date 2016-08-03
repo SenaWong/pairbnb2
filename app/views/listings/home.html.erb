@@ -1,6 +1,10 @@
 <h1 align="center">Listings all here!</h1>
 
+
+
 <div align="center">
+
+<%= will_paginate %> </br>
 <% @listings.each do |l| %>
 
 Listing name:	<%=  l.name %></br>
@@ -9,7 +13,6 @@ No of rooms :	<%=  l.no_of_rooms %></br>
 Created by <%=  l.user.email %></br>
 <%= link_to "View this listing", user_listing_path(l.user, l) %>
 	<hr>
-
-
 <% end %>
+<%= will_paginate %>
 </div>
